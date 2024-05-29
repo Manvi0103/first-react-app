@@ -8,7 +8,7 @@ import Layout from './layout.js';
 function App() {
   const [visits, setVisits] = useState(0);
 
-  const incrementVisits = () => {
+  const onVisit = () => {
     setVisits(visits + 1);
   };
 
@@ -16,7 +16,7 @@ function App() {
     <div> 
         <Routes>
           <Route path="/" element = { <Layout/> }>
-          <Route index path="/" element = { <Home visits={visits} onVisit={incrementVisits} /> }>
+          <Route index path="/" element = { <Home visits={visits} onVisit={onVisit} /> }>
           </Route> 
           <Route path="about" element = { <About visits={visits} /> }>
           </Route>
