@@ -29,7 +29,7 @@ function App() {
           </ul>
         </nav>
 
-        <Switch>
+        <Route>
           <Route path="/about">
             <About visits={visits} />
           </Route>
@@ -39,7 +39,7 @@ function App() {
           <Route path="/">
             <Home visits={visits} onVisit={incrementVisits} />
           </Route>
-        </Switch>
+        </Route>
       </div>
     </Router>
   );
