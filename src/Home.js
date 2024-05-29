@@ -3,7 +3,7 @@ import React from 'react';
 const Home = ({ visits, onVisit }) => {
     React.useEffect(() => {
         onVisit();
-    }, [onVisit]);
+    } );
 
   return (
     <div>
