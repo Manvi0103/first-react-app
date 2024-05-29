@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from './Home.js';
@@ -29,16 +28,15 @@ function App() {
           </ul>
         </nav>
 
-        <Route>
-          <Route path="/about">
-            <About visits={visits} />
-          </Route>
-          <Route path="/contact">
-            <Contact visits={visits} />
-          </Route>
-          <Route path="/">
-            <Home visits={visits} onVisit={incrementVisits} />
-          </Route>
+        <Route path="/" exact>
+          <Home visits={visits} />
+          <button onClick={incrementVisits}>Visit Home Page</button>
+        </Route>
+        <Route path="/about">
+          <About visits={visits} />
+        </Route>
+        <Route path="/contact">
+          <Contact visits={visits} />
         </Route>
       </div>
     </Router>
