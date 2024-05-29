@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Router, Route, Link, Routes } from 'react-router-dom';
 import Home from './Home.js';
 import About from './About.js';
 import Contact from './Contact.js';
+import Layout from './layout.js';
 
 function App() {
   const [visits, setVisits] = useState(0);
@@ -12,35 +13,18 @@ function App() {
   };
 
   return (
-    <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Route>
-          <Route path="/about">
-            <About visits={visits} />
+    <div> 
+        <Routes>
+          <Route path="/" element = { <Layout/> }>
+          <Route index path="/" element = { <Home visits={visits} onVisit={incrementVisits} /> }>
+          </Route> 
+          <Route path="about" element = { <About visits={visits} /> }>
           </Route>
-          <Route path="/contact">
-            <Contact visits={visits} />
+          <Route path="contact"  element = { <Contact visits={visits} /> }>
           </Route>
-          <Route path="/">
-            <Home visits={visits} onVisit={incrementVisits} />
           </Route>
-        </Route>
+        </Routes>
       </div>
-    </Router>
   );
 }
 

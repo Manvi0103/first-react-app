@@ -1,12 +1,15 @@
 import React from 'react';
 
 const Home = ({ visits, onVisit }) => {
+    React.useEffect(() => {
+        onVisit();
+    }, []);
+
   return (
     <div>
       <h2>Welcome to the Home Page</h2>
       <p>Home page visited {visits} times</p>
-      <button onClick={onVisit}>Visit Home Page</button>
-      <p>Display your Banner Id: B00917895</p>
+      <p>Banner Id: B00917895</p>
     </div>
   );
 };
