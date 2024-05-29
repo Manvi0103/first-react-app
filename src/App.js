@@ -28,15 +28,16 @@ function App() {
           </ul>
         </nav>
 
-        <Route path="/" exact>
-          <Home visits={visits} />
-          <button onClick={incrementVisits}>Visit Home Page</button>
-        </Route>
-        <Route path="/about">
-          <About visits={visits} />
-        </Route>
-        <Route path="/contact">
-          <Contact visits={visits} />
+        <Route>
+          <Route path="/about">
+            <About visits={visits} />
+          </Route>
+          <Route path="/contact">
+            <Contact visits={visits} />
+          </Route>
+          <Route path="/">
+            <Home visits={visits} onVisit={incrementVisits} />
+          </Route>
         </Route>
       </div>
     </Router>
