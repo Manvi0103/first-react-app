@@ -1,9 +1,9 @@
 // src/App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
+import Home from './src/Home';
+import About from './src/About';
+import Contact from './src/Contact';
 
 function App() {
   const [visits, setVisits] = useState(0);
